@@ -1,19 +1,25 @@
 import os
 import tempfile
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 from llama_index.core import SimpleDirectoryReader, VectorStoreIndex, Settings
 from llama_index.embeddings.gemini import GeminiEmbedding
 from llama_index.llms.gemini import Gemini
 
-# Configure Gemini Embedding ModelYOUR_
+# Configure Gemini Embedding Model
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 Settings.embed_model = GeminiEmbedding(api_key=GOOGLE_API_KEY)
 
 # Configure Gemini LLM
 Settings.llm = Gemini(api_key=GOOGLE_API_KEY)
-app = Flask(__name__)
+
+app = Flask(__name__, template_folder="templates", static_folder="static")
 CORS(app)  # Enable CORS for frontend requests
+
+@app.route("/")
+def home():
+    """Serve the frontend page."""
+    return render_template("index.html")
 
 def process_pdf(pdf_file):
     """Extracts text from PDF and creates an index."""
