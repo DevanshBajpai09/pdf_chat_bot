@@ -13,7 +13,7 @@ Settings.embed_model = GeminiEmbedding(api_key=GOOGLE_API_KEY)
 # Configure Gemini LLM
 Settings.llm = Gemini(api_key=GOOGLE_API_KEY)
 
-app = Flask(__name__, template_folder="templates", static_folder="static")
+app = Flask(__name__, static_folder="static")
 CORS(app)  # Enable CORS for frontend requests
 
 @app.route("/")
