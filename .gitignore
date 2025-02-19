@@ -1,0 +1,38 @@
+# Virtual environment
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables and API keys
+.env
+*.env
+
+# Logs and debug files
+logs/
+*.log
+
+# Cache and temporary files
+*.cache
+*.tmp
+temp/
+tmp/
+
+# Flask and deployment-specific
+instance/
+*.sqlite3
+*.db
+
+# Dependencies
+*.egg-info/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# VS Code settings (optional)
+.vscode/
+
+# MacOS & Linux system files
+.DS_Store
