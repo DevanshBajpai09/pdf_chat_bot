@@ -4,6 +4,6 @@ llama-index
 google-generativeai
 gunicorn
 llama_index.embeddings.gemini
-
+llama_index.llms.gemini
 
 
