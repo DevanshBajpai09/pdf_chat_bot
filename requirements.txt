@@ -3,3 +3,7 @@ Flask-Cors
 llama-index
 google-generativeai
 gunicorn
+
+llama-index-embeddings-openai
+
+
